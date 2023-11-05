@@ -11,7 +11,7 @@ body {
 }
 
 .title {
-    font-size: 7vw;
+    font-size: 5vw;
 }
 
 .body-text {
@@ -93,9 +93,11 @@ body {
     width: 100%;
     text-align: center;
     height: 100%;
+    padding-bottom: 5%;
 }
 
 .skill-set .title {
+    padding-top: 5%;
     color: #FFF;
     text-align: center;
     font-size: 5vw;
@@ -107,7 +109,7 @@ body {
 .bars {
     display: flex;
     width: 100%;
-    height: 70%;
+    height: max(70%);
     justify-content: space-evenly;
 }
 
@@ -135,7 +137,7 @@ body {
 
 .skills {
     display: grid;
-    grid-template-columns: 0.3fr repeat(5,1fr) 0.3fr;
+    grid-template-columns: 0.3fr repeat(5, 1fr) 0.3fr;
 }
 
 .skill {
@@ -144,5 +146,66 @@ body {
     font-size: 2vw;
     font-style: normal;
     font-weight: 700;
+    line-height: normal;
+}
+
+.footer {
+    background-color: black;
+    color: #FFF;
+    text-align: center;
+    font-size: 2vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    height: 10%;
+    width: 100%;
+}
+
+.footer span {
+    font-weight: 300;
+}
+
+.hobbies {
+    width: 100%;
+    height: 90%;
+    background: #DFE5F3;
+}
+
+.hobbies .title {
+    padding-bottom: 5%;
+    padding-top: 5%;
+    color: #000;
+    text-align: center;
+    font-weight: 700;
+}
+
+.icon {
+    width: 35%;
+}
+
+.hobby {
+    text-align: center;
+}
+
+.hobbies .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 5%;
+}
+
+.hobby .name {
+    color: #000;
+    font-size: 3vw;
+    text-align: center;
+    font-weight: 700;
+}
+
+.hobby .desc {
+    width:100%;
+    color: #000;
+    font-size: 2vw;
+    font-style: normal;
+    font-weight: 400;
     line-height: normal;
 }
