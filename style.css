@@ -1,5 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@keyframes fadeout{
+    from{
+        opacity:1;
+        transform:translateY(0%);
+    }
+    to{
+        opacty:0;
+        transform:translateY(-20%);
+    }
+}
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
 
+    to {
+        opacity: 1;
+        transform: translateY(0%)
+    }
+}
+
+@keyframes filljs {
+    from {
+        height: 12%;
+    }
+
+    to {
+        height: 60%;
+    }
+}
+@keyframes fillcpp {
+    from {
+        height: 12%;
+    }
+
+    to {
+        height: 40%;
+    }
+}
+@keyframes fillgit {
+    from {
+        height: 12%;
+    }
+
+    to {
+        height: 40%;
+    }
+}
+@keyframes fillcp {
+    from {
+        height: 12%;
+    }
+
+    to {
+        height: 70%;
+    }
+}
+@keyframes fillpy {
+    from {
+        height: 12%;
+    }
+
+    to {
+        height: 30%;
+    }
+}
 html,
 body {
     width: 100%;
@@ -8,10 +74,27 @@ body {
 
 * {
     font-family: 'Open Sans', sans-serif;
+    user-select: none;
 }
 
+.anim {
+    opacity: 0;
+}
+
+.show {
+    animation-name: fadein;
+    animation-duration: 1s;
+    opacity: 1;
+}
+.hide{
+    animation-name: fadeout;
+    animation-duration: 1s;
+    opacity:0;
+}
 .title {
+    padding-top: 2%;
     font-size: 5vw;
+    font-weight: 700;
 }
 
 .body-text {
@@ -35,7 +118,14 @@ body {
     box-sizing: border-box;
 }
 
+.intro .title {
+    animation-name: fadein;
+    animation-duration: 1s;
+}
+
 .self-info {
+    animation-name: fadein;
+    animation-duration: 1s;
     text-shadow: none;
     margin-top: 5%;
     padding-bottom: 5%;
@@ -114,25 +204,64 @@ body {
 }
 
 .bar {
+    position: relative;
+    background: #D9D9D9;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
     height: 100%;
     width: 5%;
     border-radius: 3.625rem;
-    background: #D9D9D9;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+
+.progress {
+    position: absolute;
+    width: 100%;
+    height:15%;
+    background-color: #59FAFF;
+    border-radius: 3.625rem;
+    z-index: 1;
+    bottom: 0;
+}
+.filljs {
+    animation-name: filljs;
+    animation-duration: 2s;
+    height:60%;
+}
+.fillcpp{
+    animation-name: fillcpp;
+    animation-duration: 2s;
+    height:40%
+}
+.fillgit{
+    animation-name: fillgit;
+    animation-duration: 2s;
+    height:40%;
+}
+.fillcp{
+    animation-name: fillcp;
+    animation-duration: 2s;
+    height:70%;
+}
+.fillpy{
+    animation-name: fillpy;
+    animation-duration: 2s;
+    height:30%;
 }
 
 .meter {
     width: 100%;
     height: 0.1%;
     background-color: black;
+    z-index: 2;
 }
 
 .half {
     width: 50%;
+    z-index: 2;
+
 }
 
 .skills {
@@ -149,7 +278,7 @@ body {
     line-height: normal;
 }
 
-.footer {
+.skill-footer {
     background-color: black;
     color: #FFF;
     text-align: center;
@@ -157,8 +286,9 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    height: 10%;
     width: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 .footer span {
@@ -167,7 +297,6 @@ body {
 
 .hobbies {
     width: 100%;
-    height: 90%;
     background: #DFE5F3;
 }
 
@@ -202,10 +331,164 @@ body {
 }
 
 .hobby .desc {
-    width:100%;
+    width: 100%;
     color: #000;
     font-size: 2vw;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.projects {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.projects .title {
+    padding-bottom: 5%;
+    margin-left: 2%;
+}
+
+.projects-container {
+    display: flex;
+    height: 70%;
+    width: 95%;
+}
+
+.projects .container {
+    padding-left: 5%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 10%;
+    position: relative;
+}
+
+.slider-container {
+    height: 100%;
+    background: black;
+    width: 10%;
+}
+
+.meter1,
+.meter2 {
+    height: 100%;
+    width: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mile {
+    background-color: black;
+    width: 100%;
+    height: 2%;
+}
+
+.ball {
+    aspect-ratio: 1/1;
+    position: absolute;
+    border-radius: 50%;
+    background: black;
+    width: 30%;
+    z-index: 10;
+    top: -2%;
+}
+
+.project .desc {
+    margin-left: 2%;
+    max-width: 40%;
+}
+
+.project .year {
+    text-align: left;
+    color: #000;
+    font-size: 3vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.project-title {
+    font-weight: 700;
+}
+
+.project {
+    width: 80%;
+    justify-content: space-around;
+    display: flex;
+    color: #000;
+    text-align: center;
+    font-size: 2vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 148.682%;
+}
+
+.project .image {
+    margin-left: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    margin-bottom: 10%;
+}
+
+.source {
+    display: flex;
+    justify-content: space-between;
+    color: #000AFF;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+.footer {
+    background: #D9D9D9;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.footer .school {
+    width: 17%;
+    font-size: 2vw;
+    justify-content: space-between;
+    display: flex;
+    color: #000;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.school .image {
+    width: 100%;
+}
+.school a{
+    color: #000;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+}
+.contact {
+    margin-left: 2%;
+    width: 17%;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+    color: #000;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.contact .icons {
+    width: 30%;
 }

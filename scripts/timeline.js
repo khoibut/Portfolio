@@ -1,0 +1,41 @@
+ball=document.querySelector('[data-ball]')
+bar=document.querySelector('[data-bar]')
+maxballCenter=ball.getBoundingClientRect().height/2
+minballCenter=-(bar.getBoundingClientRect().height-maxballCenter)
+projects=document.querySelectorAll('[data-project]')
+ballCenter=ball.getBoundingClientRect().height/2
+ball.style.top=-maxballCenter+"px"
+div=0;
+function mousedown(e){
+    originalY=e.clientY
+    document.onmousemove=mousemove
+    document.onmouseup=mouseup;
+    function mousemove(e){
+        projects[div].classList.remove("show")
+        projects[div].classList.add("hide")
+        newY=e.clientY
+        ballCenter+=originalY-newY
+        if(ballCenter>maxballCenter){
+            ballCenter=maxballCenter
+        }
+        if(ballCenter<minballCenter){
+            ballCenter=minballCenter
+        }
+        ball.style.top=0-ballCenter+"px"
+        originalY=newY;
+    }
+    function mouseup(){
+        div=Math.round((-ballCenter+maxballCenter)/bar.getBoundingClientRect().height*100/20)
+        for(i=0;i<projects.length;i++){
+            projects[i].style.display='none';
+        }
+        projects[div].classList.remove("hide")
+        projects[div].classList.add("show")
+        projects[div].style.display=''
+        ballCenter=0-(bar.getBoundingClientRect().height*(div*20/100)-maxballCenter)
+        ball.style.top=-ballCenter+"px"
+        document.onmousemove=null
+        document.onmouseup=null
+    }
+}
+ball.onmousedown=mousedown;

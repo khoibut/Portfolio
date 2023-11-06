@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>khoibut</title>
     <link href="Normalize.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <script src="scripts/timeline.js" defer></script>
+    <script src="scripts/animation.js" defer></script>
 </head>
+
 <body>
     <div class="intro">
         <div class="title">
@@ -14,17 +18,20 @@
         </div>
         <div class="self-info body-text">
             <span>
-                Im <span class="name">Nguyễn Hữu Đăng Khôi</span> from <span class="school">UIT</span>. <span class="friendly">Friendly</span> but also <span class="serious">serious</span> and aspiring to be <span class="dev">a great developer</span>
+                Im <span class="name">Nguyễn Hữu Đăng Khôi</span> from <span class="school">UIT</span>. <span
+                    class="friendly">Friendly</span> but also <span class="serious">serious</span> and aspiring to be
+                <span class="dev">a great developer</span>
             </span>
             <img src="images/me.png" class="me">
         </div>
     </div>
     <div class="skill-set">
-        <div class="title">
+        <div class="title anim">
             Skill Sets
         </div>
         <div class="bars">
             <div class="bar">
+                <div class="progress"></div>
                 <div class="meter"></div>
                 <div class="meter half"></div>
                 <div class="meter"></div>
@@ -48,6 +55,7 @@
                 <div class="meter"></div>
             </div>
             <div class="bar">
+                <div class="progress"></div>
                 <div class="meter"></div>
                 <div class="meter half"></div>
                 <div class="meter"></div>
@@ -71,6 +79,7 @@
                 <div class="meter"></div>
             </div>
             <div class="bar">
+                <div class="progress"></div>
                 <div class="meter"></div>
                 <div class="meter half"></div>
                 <div class="meter"></div>
@@ -94,6 +103,7 @@
                 <div class="meter"></div>
             </div>
             <div class="bar">
+                <div class="progress"></div>
                 <div class="meter"></div>
                 <div class="meter half"></div>
                 <div class="meter"></div>
@@ -117,6 +127,7 @@
                 <div class="meter"></div>
             </div>
             <div class="bar">
+                <div class="progress"></div>
                 <div class="meter"></div>
                 <div class="meter half"></div>
                 <div class="meter"></div>
@@ -141,7 +152,7 @@
             </div>
         </div>
         <br>
-        <div class="skills">
+        <div class="skills anim">
             <div></div>
             <span class="skill">
                 Javascript
@@ -150,34 +161,36 @@
                 C++
             </span>
             <span class="skill">
-                Backend
+                Git
             </span>
             <span class="skill">
                 Competitive<br>Programming
             </span>
             <span class="skill">
                 Python
-            </div>
         </div>
     </div>
-    <div class="footer">
-        I still have <span>a lot to learn</span>
+    <div class="skill-footer">
+        <div class="anim">
+            I still have <span>a lot to learn</span>
+        </div>
+    </div>
     </div>
     <div class="hobbies">
-        <div class="title">Hobbies</div>
+        <div class="title anim">Hobbies</div>
         <div class="container">
-            <div class="hobby">
+            <div class="hobby anim">
                 <img class="icon" src="images/controller.png">
                 <div class="name">Gaming</div>
                 <div class="desc">I really enjoy playing<br>video games especially<br>rhythm games</div>
             </div>
-            <div class="hobby">
+            <div class="hobby anim">
                 <img class="icon" src="images/music.png">
                 <div class="name">Music</div>
                 <div class="desc">I enjoy listening to music<br>after and meanwhile<br>studying</div>
 
             </div>
-            <div class="hobby">
+            <div class="hobby anim">
                 <img class="icon" src="images/code.png">
                 <div class="name">Coding</div>
                 <div class="desc">As crucial as it is<br>I enjoy coding a lot</div>
@@ -185,5 +198,177 @@
             </div>
         </div>
     </div>
+    <div class="projects">
+        <div class="title anim">Projects:</div>
+        <div class="projects-container anim">
+            <div class="container">
+                <div class="ball" data-ball></div>
+                <div class="meter1">
+                    <div class="mile"></div>
+                    <div class="mile"></div>
+                    <div class="mile"></div>
+                    <div class="mile"></div>
+                    <div class="mile"></div>
+                    <div class="mile"></div>
+                </div>
+                <div class="slider-container" data-bar>
+                </div>
+                <div class="meter2">
+                    <div class="mile"></div>
+                    <div class="mile"></div>
+                    <div class="mile"></div>
+                    <div class="mile"></div>
+                    <div class="mile"></div>
+                    <div class="mile"></div>
+                </div>
+            </div>
+            <div class="project" data-project style="display:'';">
+                <div class="desc">
+                    <div class="year">2020</div>
+                    <br>
+                    <div class="info">
+                        After a few years of learning Pascal. I started learning DSA. Saw the potential, I created a
+                        <span class="project-title">Sudoku Solver</span> with pure C++.
+                    </div>
+                    <br>
+                    <div class="source">
+                        <a href="https://github.com/khoibut/Sudoku-Solver" target="_blank">
+                            >Source
+                        </a>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="images/sudoku.png" class="image">
+                </div>
+            </div>
+            <div class="project" data-project style="display:none;">
+                <div class=desc>
+                    <div class="year">2021</div>
+                    <br>
+                    <div class="info">
+                        While learning C++, I decided to steer a little bit into python image recognition. After some
+                        studying I made a bot that automatically play the game <span class="project-title">Bomb
+                            Party</span>.
+                    </div>
+                    <br>
+                    <div class="source">
+                        <a href="https://github.com/khoibut/Bomb-party" target="_blank">
+                            >Source
+                        </a>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="images/wordBomb.png" class="image">
+                </div>
+            </div>
+            <div class="project" data-project style="display:none;">
+                <div class="desc">
+                    <div class="year">2022</div>
+                    <br>
+                    <div class="info">
+                        Started getting into Web development. After a few weeks of learning the basic and some HTML. I
+                        made a recreation of <span class="project-title">Bad Apple!</span> using HTML and Python.
+                    </div>
+                    <br>
+                    <div class="source">
+                        <a href="https://github.com/khoibut/bad-apple" target="_blank">
+                            >Source
+                        </a>
+                        <a href="https://khoibut.github.io/bad-apple/" target="_blank">>Website</a>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="images/badApple.png" class="image">
+                </div>
+            </div>
+            <div class="project" data-project style="display:none;">
+                <div class="desc">
+                    <div class="year">2023</div>
+                    <br>
+                    <div class="info">
+                        After learning the very basic of CSS. I recreated an instrument from the game <span
+                            class="project-title">Genshin Impact</span> with an autoplay features that uses MIDI files.
+                    </div>
+                    <br>
+                    <div class="source">
+                        <a href="https://github.com/khoibut/genshin-bard" target="_blank">
+                            >Source
+                        </a>
+                        <a href="https://khoibut.github.io/genshin-bard/" target="_blank">>Website</a>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="images/genshin.png" class="image">
+                </div>
+            </div>
+            <div class="project" data-project style="display:none;">
+                <div class="desc">
+                    <div class="year">2023</div>
+                    <br>
+                    <div class="info">
+                        When learning Javascript I decided to make a remake of pomodoro. it is called the <span
+                            class="project-title">Oven Clock</span>. I made it to help me with productivity.
+                    </div>
+                    <br>
+                    <div class="source">
+                        <a href="https://github.com/khoibut/oven-clock" target="_blank">
+                            >Source
+                        </a>
+                        <a href="https://khoibut.github.io/oven-clock/OvenClock.html" target="_blank">>Website</a>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="images/ovenClock.png" class="image">
+                </div>
+            </div>
+            <div class="project" data-project style="display:none;">
+                <div class="desc">
+                    <div class="year">2023</div>
+                    <br>
+                    <div class="info">
+                        Finally my most recent project. It is a <span class="project-title">Project Manager</span> that
+                        i use to manage all of my big and small projects.
+                    </div>
+                    <br>
+                    <div class="source">
+                        <a href="https://github.com/khoibut/Project_manager" target="_blank">
+                            >Source
+                        </a>
+                        <a href="https://khoibut.github.io/Project_manager/" targe="_blank">>Website</a>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="images/projectManager.png" class="image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="school">
+            <div>
+                <a href="https://www.uit.edu.vn/" target="_blank">
+                    <img src="images/uit.png" class="image">
+                </a>
+            </div>
+            <a href="https://www.uit.edu.vn/" target="_blank">VNUHCM<br>UIT</a>
+        </div>
+        <div class="contact">
+            <div>
+                <a href="https://www.facebook.com/profile.php?id=100009314492952" target="_blank">
+                    <img src="images/facebook.png" class="icons">
+                </a>
+                <a href="https://github.com/khoibut" target="_blank">
+                    <img src="images/github.png" class="icons">
+                </a>
+                <a href="mailto:23560079@gm.uit.edu.vn">
+                    <img src="images/mail.png" class="icons">
+                </a>
+            </div>
+            <div>
+                Contacts
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
